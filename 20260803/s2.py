@@ -109,80 +109,78 @@ print(r"C:\new\folder")  # 앞에 r을 붙이면 \가 그대로 출력(폴더 �
 
 
 # 문자열 연산
-print("파이"+"썬") # 이어 붙이기
-print("하하" * 3) # 문자열 반복
-print(len("파이썬")) #3 문자열 길이 세기
+print("파이" + "썬")  # 이어 붙이기
+print("하하" * 3)  # 문자열 반복
+print(len("파이썬"))  # 3 문자열 길이 세기
 
 # 문자열 연산
 word = "PYTHON"
 # P Y T H O N
 # 0 1 2 3 4 5 <- 인덱스 번호는 0부터 시작
 # -5부터 마지막글자인 N은 -1(뒤에서 부터 셀 때에는 음수)
-print(word[0]) # P
-print(word{-1}) # N
+print(word[0])  # P
+print(word[-1])  # N
 
 # 잘라내기(슬라이싱)
 # word[시작 : 끝] 끝 번호는 포함되지 않음에 주의!
-print(word[0 : 3]) # P Y T 인덱스 넘버 0, 1, 2만 출력
-print(word[2 :]) # T H O N 인덱스 넘버 2부터 끝까지
-print(word[:3]) # P Y T 처음부터 인덱스 넘버 2까지(끝 번호 포함되지 않음)
+print(word[0:3])  # P Y T 인덱스 넘버 0, 1, 2만 출력
+print(word[2:])  # T H O N 인덱스 넘버 2부터 끝까지
+print(word[:3])  # P Y T 처음부터 인덱스 넘버 2까지(끝 번호 포함되지 않음)
 
 # 자주 쓰는 문자열 기능
 text = "      Hello Python  "
-print(text.strip()) # "Hello Python" 앞뒤 공백을 제거
-print(text.upper()) # "HELLO PYTHON" 모든 문자가 대문자로 출력
-print(text.lower()) # "hello python" 모든 문자가 소문자로 출력
-print(text.replace("o", "0")) # o를 0으로 바꿈
-print("사과,배,감".split(",")) # ['사과', '배', '감] 구분자로 나누어 출력
+print(text.strip())  # "Hello Python" 앞뒤 공백을 제거
+print(text.upper())  # "HELLO PYTHON" 모든 문자가 대문자로 출력
+print(text.lower())  # "hello python" 모든 문자가 소문자로 출력
+print(text.replace("o", "0"))  # o를 0으로 바꿈
+print("사과,배,감".split(","))  # ['사과', '배', '감] 구분자로 나누어 출력
 
 # 문자열은 한 번 만들면 수정 불가
 # word[0] = "J" # TypeError
-word = "JYTHON" # 아예 새로 대입하는 것 가능
-
+word = "JYTHON"  # 아예 새로 대입하는 것 가능
 
 
 # --------------------------------------------------------
 # 6. bool - 불리언(참/거짓)
 # --------------------------------------------------------
-is_student = True # 첫 글자를 대문자로 표기(true로 작성하면 에러)
-is_adult = False 
+is_student = True  # 첫 글자를 대문자로 표기(true로 작성하면 에러)
+is_adult = False
 
 # 비교 연산자의 결과가 bool
-print(10 > 5) # True
-print(10 == 5) # False
-print(10 != 5) # True
+print(10 > 5)  # True
+print(10 == 5)  # False
+print(10 != 5)  # True
 
 # bool은 사실 숫자
 # True == 1
 # False == 0
-print(int(True)) # 1
-print(True + True) # 2
+print(int(True))  # 1
+print(True + True)  # 2
 
 # 논리연산
-print(True and False) # False -> and 연산은 둘 다 참인 경우에만 True
-print(True or False) # True -> or 연산은 하나라도 참인 경우에는 True
-print(not True) # False -> not 연산은 결과를 반대로 출력
+print(True and False)  # False -> and 연산은 둘 다 참인 경우에만 True
+print(True or False)  # True -> or 연산은 하나라도 참인 경우에는 True
+print(not True)  # False -> not 연산은 결과를 반대로 출력
 
 # 다른 자료형을 참/거짓으로 볼 때(매우 자주 사용)
 # 아래 값들은 전부 '거짓'으로 취급
-print(bool(0)) # False -> 숫자 0은 False를 나타내므로
-print(bool(0.0)) # False
-print(bool("")) # False -> 빈 문자열
-print(bool(None)) # False
-print(bool([])) # False -> 빈 리스트
+print(bool(0))  # False -> 숫자 0은 False를 나타내므로
+print(bool(0.0))  # False
+print(bool(""))  # False -> 빈 문자열
+print(bool(None))  # False
+print(bool([]))  # False -> 빈 리스트
 
 # 그 외 모든 값은 '참'
-print(bool(1)) # True
-print(bool(-5)) # True -> 0이 아니면 음수도 '참'으로 취급
-print(bool("0")) # True -> 빈 문자열이 아니면 "0"이어도 '참'으로 취급
-
+print(bool(1))  # True
+print(bool(-5))  # True -> 0이 아니면 음수도 '참'으로 취급
+print(bool("0"))  # True -> 빈 문자열이 아니면 "0"이어도 '참'으로 취급
 
 
 # --------------------------------------------------------
 # 7. None - 값이 없음
 # --------------------------------------------------------
-result = None # None을 표기할 때는 첫 글자를 대문자로 작성!
-print(type(None)) # NoneType
+result = None  # None을 표기할 때는 첫 글자를 대문자로 작성!
+print(type(None))  # NoneType
 
 # '아직 값이 정해지지 않았다'를 표현할 때 사용
 # 0, "", False와는 다름
@@ -192,9 +190,8 @@ print(type(None)) # NoneType
 # None -> 값 자체가 '존재하지 않음'
 
 # None인지 확인 할 때는 '==' 대신 'is'를 쓰는 것이 관례
-print(result is None) # True
-print(result is not None) # False
-
+print(result is None)  # True
+print(result is not None)  # False
 
 
 # ========================================================
