@@ -368,6 +368,14 @@ print(blank_list)
 # CSV 파일에는 자료형 정보가 없음 -> 그냥 글자만
 # 파이썬은 전부 문자열로 읽어옴
 # 계산하려면 반드시 int나 float으로 변환!
+with open(e_file, "r", encoding="utf-8", newline="") as f:
+    for row in csv.DictReader(f):
+        print(f"연봉 값 : {row['연봉']!r} 자료형: {type(row['연봉'])}")
+        break
+# !r은 갓ㅂ을 따옴표까지 포함해서 보여줌
+#'4500'처럼 따옴표가 보이면 문자열, 4500이면 숫자
+
+
 
 
 
@@ -411,8 +419,14 @@ def load_employees(path):
 employees = load_employees(employees_file)
 
 print(f"  {len(employees)}명의 데이터를 읽었습니다")
-print("  첫 번째 사람:", employees[0])
-print("  연봉의 자료형:", type(employees[0]["연봉"]).__name__, " <- 이제 숫자!")
+
+if len(employees) > 0:
+    print("  첫 번째 사람:", employees[0])
+    print("  연봉의 자료형:", type(employees[0]["연봉"]).__name__, " <- 이제 숫자!")
+else:
+    print("  직원 데이터가 없습니다")
+
+
 
 
 
@@ -445,3 +459,4 @@ print("\n  [연봉 5000 이상]")
 for e in employees:
     if e["연봉"] >= 5000:
         print(f"     {e['이름']} - {e['연봉']}만원")
+
